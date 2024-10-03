@@ -1,10 +1,8 @@
-
+import Link from "next/link";
 import "./globals.css";
 import { Fugaz_One, Open_Sans } from "next/font/google";
 
-
-
-const openSans = Open_Sans({ subsets: ["latin"]});
+const openSans = Open_Sans({ subsets: ["latin"] });
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata = {
@@ -15,20 +13,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const header = (
     <header className="p-4 sm:p-8 flex items-center justify-between gap-4">
-      <h1
-        className={`text-base sm:text-lg font-bold textGradient transform transition-transform hover:scale-105  ${fugaz.className}`}
-      >
-        Moody
-      </h1>
-      <div className="flex items-center justify-between">
-        placeholder
-      </div>
+      <Link href="/">
+        <h1
+          className={`text-base sm:text-lg font-bold textGradient transform transition-transform hover:scale-105  ${fugaz.className}`}
+        >
+          Moody
+        </h1>
+      </Link>
+      <div className="flex items-center justify-between">placeholder</div>
     </header>
   );
 
-  const footer = <footer className="p-4 sm:p-8">
-    <p className={'text-center text-indigo-500 ' + fugaz.className}>Build by Fikret Erkara 💛</p>
-  </footer>;
+  const footer = (
+    <footer className="p-4 sm:p-8">
+      <p className={"text-center text-indigo-500 " + fugaz.className}>
+        Build by Fikret Erkara 💛
+      </p>
+    </footer>
+  );
   return (
     <html lang="en">
       <body
