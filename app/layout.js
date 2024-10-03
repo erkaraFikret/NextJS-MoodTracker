@@ -20,6 +20,9 @@ export default function RootLayout({ children }) {
       >
         Moody
       </h1>
+      <div className="flex items-center justify-between">
+        placeholder
+      </div>
     </header>
   );
 
